@@ -25,3 +25,4 @@ console.log(product)
 const {productName,price,stock} = product
 
 console.log(price)
+

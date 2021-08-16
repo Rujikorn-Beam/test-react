@@ -24,3 +24,4 @@ const customer = {
 customer.showDate()
 console.log(customer);
 
+

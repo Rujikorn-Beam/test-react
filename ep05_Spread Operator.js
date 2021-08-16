@@ -19,3 +19,4 @@ const data2 = [20,30,40]
 data2.push(...data1)
 console.log(data2) //[ 20,  30,  10, 20,100, 200, 300]
 
+

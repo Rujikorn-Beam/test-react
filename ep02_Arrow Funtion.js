@@ -18,3 +18,4 @@ setAge=(age)=>"อายุ =" + age
 
 console.log(fullname("Beam","Rujikorn"));
 console.log(setAge(20));
+
