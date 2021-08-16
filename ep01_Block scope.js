@@ -17,4 +17,3 @@ if(x===10){
 // }
 
 console.log("y out ="+y);
-

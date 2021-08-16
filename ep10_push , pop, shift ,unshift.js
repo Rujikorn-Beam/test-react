@@ -20,4 +20,3 @@ console.log(data)// [ 20, 30, 500 ]
 
 data.unshift(999)
 console.log(data) // [ 999, 20, 30, 500 ]
-
