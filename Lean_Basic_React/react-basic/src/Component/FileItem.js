@@ -10,4 +10,23 @@ const FileItem = ()=>{
     )
 }
 
-export default FileItem
+const FileItem1 = (props)=>{
+    return(
+        <li>{props.name}<span>{props.amount}</span></li>    
+    )
+}
+
+const FileItem2 = (props)=>{
+    const {name,amount} = props
+    return(
+        <li>{name}<span>{amount}</span></li>    
+    )
+}
+// 2 or 3 
+const FileItem3 = ({name,amount})=>{
+    return(
+        <li>{name}<span>{amount}</span></li>    
+    )
+}
+
+export default FileItem2
