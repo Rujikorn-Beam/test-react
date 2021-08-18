@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import FileHelloComponent from './HelloComponent/HelloComponent'; // นำcomponent ต่างไฟล์มาใส่
+import FileHelloComponent from './Component/HelloComponent'; // นำcomponent ต่างไฟล์มาใส่
 
 
 // การสร้าง Compoment(ส่วนประกอบ)
