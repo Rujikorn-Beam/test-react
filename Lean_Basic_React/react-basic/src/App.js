@@ -1,9 +1,10 @@
 import React from "react";
 import FileItem from "./Component/FileItem";
-import FileTransaction from "./Component/FileTransaction";
 import './App.css'
 import FileTransaction4 from "./Component/FileTransaction";
 import FormComponent from "./Component/FormComponent"
+import FileTransaction5 from "./Component/FileTransaction";
+import { useState } from "react";
 
 const DesignTitle = {color:"Blue",textAlign:"center",fontSize:"1.5rem"}
 
@@ -18,7 +19,7 @@ const Item = ()=>{
 }
 const Transaction = () => {
   return (
-    <FileTransaction4/>
+    <FileTransaction5/>
   )
 }
 // const Transaction1 = () => {
@@ -63,12 +64,25 @@ function App1(){
 }
 
 function App2() {
+  const initData = [
+        {id:1,name: "ต่ารักษาพยาบาล2", amount: 2000 },
+        {id:2,name: "เช่าบ้าน", amount: 8000 },
+        {id:3,name: "น้ำมัน", amount: 500 },
+    ]
+    const [item, setItem] = useState(initData) // usestate(ข้อมูลตั้งต้น)
+    const onAddNewItem =(newItem)=>{
+      // console.log("ข้อมูลที่ส่งมา = ", newItem)
+      setItem((prevItem)=>{
+        return [newItem,...prevItem]
+      })
+    }
+    
   return(
     <div>
       <Title/>
       <Descrtion/>
-      <FormComponent/>
-      <Transaction/>
+      <FormComponent onAddItem = {onAddNewItem}/>
+      <FileTransaction5 item = {item}/>  {/* ส่งของมูลไป transaction ชื่อที่ส่งไปไม่ใช้ชื่อไฟล์แต่เป็นชื่อ funstion  โดยใช้ propส่่งไป*/}
     </div>
   )
 }
