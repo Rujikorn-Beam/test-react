@@ -65,7 +65,7 @@ function App1(){
 
 function App2() {
   const initData = [
-        {id:1,name: "ต่ารักษาพยาบาล2", amount: 2000 },
+        {id:1,name: "ต่ารักษาพยาบาล2", amount: -2000 },
         {id:2,name: "เช่าบ้าน", amount: 8000 },
         {id:3,name: "น้ำมัน", amount: 500 },
     ]
@@ -86,4 +86,23 @@ function App2() {
     </div>
   )
 }
-export default App2;
+function App3() {
+  const initData = [] // เอาออกและตั้ง state เป็น array ถ้าไม่ต้องการข้อมูลเริ่มต้น
+    const [item, setItem] = useState([]) // usestate(ข้อมูลตั้งต้น)
+    const onAddNewItem =(newItem)=>{
+      // console.log("ข้อมูลที่ส่งมา = ", newItem)
+      setItem((prevItem)=>{
+        return [newItem,...prevItem]
+      })
+    }
+    
+  return(
+    <div>
+      <Title/>
+      <Descrtion/>
+      <FormComponent onAddItem = {onAddNewItem}/>
+      <FileTransaction5 item = {item}/>  {/* ส่งของมูลไป transaction ชื่อที่ส่งไปไม่ใช้ชื่อไฟล์แต่เป็นชื่อ funstion  โดยใช้ propส่่งไป*/}
+    </div>
+  )
+}
+export default App3;

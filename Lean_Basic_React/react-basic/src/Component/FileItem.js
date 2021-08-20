@@ -19,8 +19,14 @@ import PropTypes from 'prop-types';
 
 const FileItem2 = (props)=>{
     const {name,amount} = props
+    const status = amount<0 ?"expense":"income" //if /else
+    const sysmbol = amount<0 ?"-":"+"// เก็บสัญลักษณ์ + -
     return(
-        <li>{name}<span>{amount}</span></li>    
+        <div>
+            {/* <li>{name} {status}<span>{amount}</span></li>    */}
+            <li className={status}>{name} <span>{sysmbol}{Math.abs(amount)}</span></li>   
+        </div>
+         
     )
 }
 // 2 or 3 

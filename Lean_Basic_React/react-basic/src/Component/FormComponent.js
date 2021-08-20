@@ -7,7 +7,7 @@ import './CssItem.css'
 const FormComponent = (props)=>{ 
 
     const [name,setName] = useState('') // เมื่อใส่ค่าจะนำมาใช้เลย 
-    const [amout,setAmout] = useState(0) // 0 ค่าเริ่มต้น
+    const [amount,setAmount] = useState(0) // 0 ค่าเริ่มต้น
 
     const inputName= (event)=>{
         setName(event.target.value) //เมื่อป้อนค่าเข้าไปจะถูกเก็ยในstate
@@ -21,7 +21,7 @@ const FormComponent = (props)=>{
 //  ค่าเช่า
     }
     const inputAmount = (event)=>{
-        setAmout(event.target.value) //เมื่อป้อนค่าเข้าไปจะถูกเก็ยในstate
+        setAmount(event.target.value) //เมื่อป้อนค่าเข้าไปจะถูกเก็ยในstate
         // console.log(event.target.value)
     }
     const saveItem = (event)=>{
@@ -29,12 +29,12 @@ const FormComponent = (props)=>{
         const itemData  = { // เก็บข้อมูล เมื่อกดปุ่ม SUMMIT
             id: uuidv4(),
             name:name ,
-            amout:Number(amout)  //ระบุ number type
+            amount:Number(amount)  //ระบุ number type
         }
         // console.log(itemData)
         props.onAddItem(itemData)
         setName('') // คลีดค่าstateให้พร้อมกับค่าต่อไป
-        setAmout(0)
+        setAmount(0)
         console.log("เพิ่มข้อมูลเรียบร้อย")
     }
     return(
@@ -46,7 +46,7 @@ const FormComponent = (props)=>{
                 </div>
                 <div className="form-control">
                     <label>จำนวณเงิน</label>
-                    <input type="number" placeholder="ระบุจำนวณเงิน" onChange={inputAmount} value={amout}/>
+                    <input type="number" placeholder="ระบุจำนวณเงิน" onChange={inputAmount} value={amount}/>
                 </div>
                 <div>
                     <button type="submit" className="btn">Add</button>

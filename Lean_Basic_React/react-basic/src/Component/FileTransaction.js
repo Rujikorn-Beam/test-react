@@ -1,4 +1,3 @@
-import FileItem from "./FileItem"
 import './CssItem.css'
 import { v4 as uuidv4 } from 'uuid';
 import FileItem2 from "./FileItem";
